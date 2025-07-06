@@ -1,6 +1,6 @@
 const projects = [
   {
-    title: "Quiz App",
+    title: "KanjiFall: Kanji Quiz App",
     description:
       "A responsive quiz app built using HTML, CSS, and JavaScript. Loads questions from a CSV file and includes a scoring system.",
     link: "https://github.com/Ralph78107/QuizKanjiFall.git",
@@ -16,5 +16,11 @@ const projects = [
     description:
       "A Python-based robot light simulation",
     link: "https://github.com/Ralph78107/RobotSimulation",
+  },
+  {
+    title: "FinTrackr",
+    description:
+      "A finance app tracking expenses",
+    link: "https://github.com/Ralph78107/FinTrackr-Java-Console-Budget-Tracker.git",
   },
 ];
