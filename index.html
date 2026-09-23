@@ -2,69 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Ralph Caton's programming portfolio. Computing and IT student working with Python, Java, JavaScript and web technologies."
+  />
+
   <title>Ralph Caton | Programmer Portfolio</title>
+
   <link rel="stylesheet" href="styles.css" />
+
   <script defer src="projects.js"></script>
   <script defer src="script.js"></script>
 </head>
+
 <body>
+
   <header>
-    <nav>
-      <div class="logo">Ralph Caton</div>
-      <ul>
+    <nav class="navbar">
+
+      <div class="logo">
+        Ralph Caton
+      </div>
+
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
     </nav>
   </header>
 
+
   <main>
-    <section id="about" class="container">
-      <h1>Hello, I'm Ralph</h1>
-      <p>
-        A passionate programmer specialising in Python, Java, and JavaScript. 
-        I also have experience using SQL, creating, and managing databases.
-        I enjoy creating projects that solve real problems and enjoy exploring new technologies. 
-        At the moment I am a third year Computer and IT student studying through the Open University (online), 
-        and focusing on algorithms, web design, and database structures. 
-        
-        Scroll down to check out my work. Project reposititories are currently private. 
-        To view in detail please make a request to my email address (ralphcaton@gmail.com).
+
+    <!-- About -->
+    <section id="about" class="container hero">
+
+      <p class="eyebrow">Computing & IT Student · Programmer</p>
+
+      <h1>Hello, I'm Ralph.</h1>
+
+      <p class="intro">
+        I'm a Computing & IT student at The Open University with an interest
+        in software development, web technologies and programming.
       </p>
+
+      <p>
+        I work primarily with Python, Java and JavaScript, and I'm currently
+        developing projects that explore areas such as algorithms, databases
+        and web development.
+      </p>
+
+      <p>
+        This website documents some of the projects I'm building and the
+        things I'm learning along the way.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="button">View my projects</a>
+        <a href="#contact" class="button button-secondary">Get in touch</a>
+      </div>
+
     </section>
 
+
+    <!-- Projects -->
     <section id="projects" class="container">
-      <h2>Featured Projects</h2>
+
+      <div class="section-heading">
+        <p class="eyebrow">What I'm building</p>
+        <h2>Featured Projects</h2>
+      </div>
+
       <div class="projects-grid">
-        <div class="project-card" data-index="0">
+
+        <div class="project-card" data-index="0" tabindex="0">
           <h3>KanjiFall: Kanji Quiz App</h3>
-          <p>A responsive quiz app built using HTML, CSS, and JavaScript that loads questions from a CSV file.</p>
+          <p>
+            A responsive quiz application built with HTML, CSS and
+            JavaScript.
+          </p>
+          <span class="project-link">View project →</span>
         </div>
-        <div class="project-card" data-index="1">
+
+        <div class="project-card" data-index="1" tabindex="0">
           <h3>Solar Panel Emulator</h3>
-          <p>A Python-based solar panel system that calculates the amount of energy produced by light (work in progress).</p>
+          <p>
+            A Python-based system that calculates the amount of energy
+            produced by a solar panel.
+          </p>
+          <span class="project-link">View project →</span>
         </div>
-        <div class="project-card" data-index="2">
-          <h3>Robot Control System</h3>
-          <p>A Python robot control system for handling color detection and path drawing logic using sensors (work in progress).</p>
+
+        <div class="project-card" data-index="2" tabindex="0">
+          <h3>Robot Simulation</h3>
+          <p>
+            A Python-based robot simulation exploring sensor-based
+            movement and light detection.
+          </p>
+          <span class="project-link">View project →</span>
         </div>
-        <div class="project-card" data-index="3">
+
+        <div class="project-card" data-index="3" tabindex="0">
           <h3>FinTrackr</h3>
-          <p>A finance system using Java (work in progress).</p>
+          <p>
+            A Java console application for tracking expenses and managing
+            a personal budget.
+          </p>
+          <span class="project-link">View project →</span>
         </div>
-      </div>
-      <div class="project-card" data-index="4">
+
+        <div class="project-card" data-index="4" tabindex="0">
           <h3>Realm of Shadows</h3>
-          <p>An RPG style game, with story driven elements using Java (work in progress).</p>
+          <p>
+            A story-driven RPG-style game currently being developed in Java.
+          </p>
+          <span class="project-link">View project →</span>
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- Skills -->
     <section id="skills" class="container">
-      <h2>Skills</h2>
+
+      <div class="section-heading">
+        <p class="eyebrow">Technologies</p>
+        <h2>Skills</h2>
+      </div>
+
       <ul class="skills-list">
         <li>Python</li>
         <li>Java</li>
@@ -73,27 +145,108 @@
         <li>Flask</li>
         <li>Git & GitHub</li>
       </ul>
+
     </section>
 
-    <section id="contact" class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:ralphcaton@gmail.com">ralphcaton@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/ralphbrookescaton" target="_blank">linkedin.com/in/ralphbrookescaton</a></p>
+
+    <!-- Learning -->
+    <section id="learning" class="container learning-section">
+
+      <div class="section-heading">
+        <p class="eyebrow">Currently learning</p>
+        <h2>Learning & Development</h2>
+      </div>
+
+      <p>
+        I'm currently studying Computing & IT through The Open University
+        while developing my programming skills through personal projects.
+      </p>
+
+      <p>
+        This section will eventually become a small blog where I document
+        things I'm learning, problems I've solved and lessons from my
+        projects.
+      </p>
+
     </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">Let's connect</p>
+        <h2>Contact</h2>
+      </div>
+
+      <p>
+        If you'd like to discuss one of my projects or get in touch,
+        feel free to contact me.
+      </p>
+
+      <div class="contact-links">
+
+        <a href="mailto:ralphcaton@gmail.com">
+          Email
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ralphbrookescaton"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
+
 
   <footer>
     <p>&copy; 2026 Ralph Caton. All rights reserved.</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="projectModal" class="modal">
+
+  <!-- Project Modal -->
+  <div
+    id="projectModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
     <div class="modal-content">
-      <span class="close">&times;</span>
+
+      <button
+        class="close"
+        aria-label="Close project window"
+      >
+        &times;
+      </button>
+
+      <p class="eyebrow">Project</p>
+
       <h2 id="modalTitle"></h2>
+
       <p id="modalDescription"></p>
-      <a id="modalLink" href="#" target="_blank">View More</a>
+
+      <a
+        id="modalLink"
+        class="button"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on GitHub →
+      </a>
+
     </div>
+
   </div>
+
 </body>
 </html>
