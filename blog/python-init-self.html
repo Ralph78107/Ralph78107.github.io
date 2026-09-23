@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="A beginner-friendly explanation of Python classes, __init__, self and instances."
+  />
+
+  <title>Understanding __init__ and self in Python | Ralph Caton</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+
+<body>
+
+  <header>
+
+    <nav class="navbar">
+
+      <div class="logo">
+        Ralph Caton
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#learning">Learning</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <article class="blog-post container">
+
+      <p class="eyebrow">
+        Python · September 2026
+      </p>
+
+      <h1>
+        Understanding __init__ and self in Python
+      </h1>
+
+      <p class="blog-introduction">
+        When I first started working with Python classes, two things
+        that seemed particularly confusing were <code>__init__</code>
+        and <code>self</code>. This is my attempt to explain what
+        I've learned in simple terms.
+      </p>
+
+
+      <h2>What is a class?</h2>
+
+      <p>
+        A class can be thought of as a blueprint for creating objects.
+        It describes what information an object should contain and
+        what it can do.
+      </p>
+
+      <p>
+        For example, we could create a <code>Bike</code> class:
+      </p>
+
+      <pre><code>class Bike:
+    pass</code></pre>
+
+
+      <h2>What is __init__?</h2>
+
+      <p>
+        The <code>__init__</code> method is called when we create a
+        new instance of a class. It allows us to give the new object
+        its initial information.
+      </p>
+
+      <pre><code>class Bike:
+
+    def __init__(self, colour, frame_material):
+        self.colour = colour
+        self.frame_material = frame_material</code></pre>
+
+
+      <h2>What is self?</h2>
+
+      <p>
+        <code>self</code> refers to the particular object that is
+        currently being worked with.
+      </p>
+
+      <p>
+        For example, if we create two bikes:
+      </p>
+
+      <pre><code>red_bike = Bike("Red", "Carbon Fiber")
+blue_bike = Bike("Blue", "Aluminium")</code></pre>
+
+      <p>
+        Python can keep the information for each bike separate.
+        The red bike has its own colour and frame material, while
+        the blue bike has its own values.
+      </p>
+
+
+      <h2>Creating an instance</h2>
+
+      <p>
+        When we create <code>red_bike</code>, we are creating an
+        <strong>instance</strong> of the <code>Bike</code> class.
+      </p>
+
+      <p>
+        The class is the blueprint. The instance is an actual object
+        created using that blueprint.
+      </p>
+
+
+      <h2>What I'm taking away from this</h2>
+
+      <p>
+        The most useful way I've found to think about it is:
+      </p>
+
+      <ul>
+        <li><strong>Class:</strong> the blueprint.</li>
+        <li><strong>Instance:</strong> an object created from the blueprint.</li>
+        <li><strong>__init__:</strong> sets up the new object.</li>
+        <li><strong>self:</strong> refers to that particular object.</li>
+      </ul>
+
+      <p>
+        I'm still developing my understanding of object-oriented
+        programming, but thinking about these concepts in terms of
+        objects and blueprints has made them much easier to understand.
+      </p>
+
+
+      <a
+        class="button"
+        href="../index.html#learning"
+      >
+        ← Back to Learning & Development
+      </a>
+
+    </article>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2026 Ralph Caton. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
