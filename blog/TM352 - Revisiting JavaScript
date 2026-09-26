@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta
+ name="viewport"
+ content="width=device-width, initial-scale=1.0"
+/>
+
+<meta
+ name="description"
+ content="Revisiting JavaScript while studying TM352, and taking the time to understand the fundamentals more deeply."
+/>
+
+  <title>Revisiting JavaScript | Ralph Caton</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+  <header>
+
+```
+<nav class="navbar">
+
+  <div class="logo">
+    Ralph Caton
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="../index.html#skills">Skills</a></li>
+    <li><a href="../index.html#learning">Learning</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+
+</nav>
+```
+
+  </header>
+
+  <main>
+
+```
+<article class="blog-post container">
+
+  <p class="eyebrow">
+    TM352 · JavaScript · September 2026
+  </p>
+
+  <h1>
+    Revisiting JavaScript
+  </h1>
+
+  <p class="blog-introduction">
+    I've studied JavaScript before, but starting TM352 has given me
+    an opportunity to go back over the fundamentals. This time I've
+    been taking things more slowly, experimenting with the examples
+    and making sure I understand the concepts rather than simply
+    getting the code to work.
+  </p>
+
+
+  <h2>Going back to the basics</h2>
+
+  <p>
+    JavaScript isn't new to me. I've encountered it during previous
+    study and programming projects, but I don't think I fully
+    understood some of the fundamentals the first time around.
+  </p>
+
+  <p>
+    One thing I've found useful this time is deliberately slowing
+    down. Instead of rushing through simple examples because they
+    look familiar, I'm trying to understand what each part of the
+    code is actually doing.
+  </p>
+
+  <p>
+    The first exercise involved creating a JavaScript file and
+    running it using Node.js.
+  </p>
+
+  <pre><code>console.log("Hello!");</code></pre>
+
+  <p>
+    I could then run the file from the terminal:
+  </p>
+
+  <pre><code>node hello.js</code></pre>
+
+  <p>
+    Which produces:
+  </p>
+
+  <pre><code>Hello!</code></pre>
+
+  <p>
+    It's about as simple as a program can get, but revisiting these
+    basics has been useful because it gives me a chance to think
+    about what is happening rather than just recognising the syntax.
+  </p>
+
+
+  <h2>JavaScript and Node.js</h2>
+
+  <p>
+    One of the things I reviewed was the difference between
+    JavaScript and the environment in which it is being executed.
+  </p>
+
+  <p>
+    JavaScript can run in a web browser, where it can interact with
+    HTML and the contents of a web page. It can also be executed
+    outside the browser using a runtime such as Node.js.
+  </p>
+
+  <p>
+    In these early exercises, I was using Node.js to run JavaScript
+    from the terminal. This gives me a simple environment in which
+    to experiment with the language before applying it to web pages.
+  </p>
+
+
+  <h2>Understanding console.log()</h2>
+
+  <p>
+    One of the simplest JavaScript commands is
+    <code>console.log()</code>.
+  </p>
+
+  <p>
+    It can be used to output information while a program is running,
+    which makes it particularly useful when learning and debugging.
+  </p>
+
+  <p>
+    Looking at the expression more closely also helps explain some
+    JavaScript terminology. <code>console</code> is an object and
+    <code>log</code> is a method that we are calling.
+  </p>
+
+  <p>
+    This is a small example, but understanding the difference between
+    objects and methods will become much more important as the
+    programs become more complicated.
+  </p>
+
+
+  <h2>Variables</h2>
+
+  <p>
+    I then reviewed variables using the <code>let</code> keyword.
+    Variables can have their values changed during the execution of
+    a program.
+  </p>
+
+  <pre><code>let a;
+```
+
+let b = 4;
+
+a = 3;
+
+console.log(a);
+console.log(b);
+
+a = a + b;
+
+console.log(a);</code></pre>
+
+```
+  <p>
+    The output is:
+  </p>
+
+  <pre><code>3
+```
+
+4
+7</code></pre>
+
+```
+  <p>
+    There are several small ideas here that are worth understanding.
+    The first line creates <code>a</code> without assigning it a
+    value. The second creates <code>b</code> and gives it the value
+    4.
+  </p>
+
+  <p>
+    The statement <code>a = 3</code> then assigns a value to
+    <code>a</code>. Later, <code>a = a + b</code> takes the current
+    values of <code>a</code> and <code>b</code>, adds them together
+    and assigns the result back to <code>a</code>.
+  </p>
+
+  <p>
+    So the value of <code>a</code> changes from 3 to 7.
+  </p>
+
+
+  <h2>Constants</h2>
+
+  <p>
+    I also reviewed the difference between variables and constants.
+    Constants are declared using <code>const</code>.
+  </p>
+
+  <pre><code>const A = 3;
+```
+
+const B = 4;
+
+const C = A + B;
+
+console.log(A);
+console.log(B);
+console.log(C);</code></pre>
+
+```
+  <p>
+    This produces:
+  </p>
+
+  <pre><code>3
+```
+
+4
+7</code></pre>
+
+```
+  <p>
+    A constant has to be given a value when it is declared, and that
+    binding cannot later be reassigned.
+  </p>
+
+  <p>
+    The important distinction is therefore that <code>let</code> is
+    used when a value needs to be reassigned, while <code>const</code>
+    is used when it should not be reassigned.
+  </p>
+
+
+  <h2>Experimenting with the examples</h2>
+
+  <p>
+    One of the things I've been doing differently this time is
+    changing the examples myself rather than simply following them.
+  </p>
+
+  <p>
+    For example, I experimented with some values representing years:
+  </p>
+
+  <pre><code>const A = 3;
+```
+
+const B = 4;
+
+const C = A + B;
+
+let year = 2024;
+
+let currentYear = 2027;
+
+const YEAR = 2024;
+
+const CURRENT_YEAR = 2026;
+
+console.log(A);
+console.log(B);
+console.log(C);
+
+console.log(year);
+console.log(currentYear);
+
+console.log(YEAR);
+console.log(CURRENT_YEAR);</code></pre>
+
+```
+  <p>
+    This is a very small experiment, but it illustrates something
+    important about how I learn programming. When I change the
+    examples and deliberately test things, the concepts tend to
+    stick much better.
+  </p>
+
+
+  <h2>Understanding rather than remembering</h2>
+
+  <p>
+    One of the main things I'm taking away from this review is that
+    recognising a piece of code isn't necessarily the same as
+    understanding it.
+  </p>
+
+  <p>
+    I've seen JavaScript before and have been able to write working
+    programs, but slowing down and looking at the fundamentals again
+    has helped fill in some of the gaps in my understanding.
+  </p>
+
+  <p>
+    For me, the useful part of this review isn't memorising that
+    <code>let</code> creates a variable or that <code>const</code>
+    creates a constant. It's understanding why I would choose one
+    rather than the other and what happens when the program runs.
+  </p>
+
+
+  <h2>What I'm taking away from this</h2>
+
+  <ul>
+    <li>
+      <strong>let:</strong> creates a variable whose value can be reassigned.
+    </li>
+
+    <li>
+      <strong>const:</strong> creates a binding that cannot be reassigned.
+    </li>
+
+    <li>
+      <strong>console.log():</strong> outputs information and is useful for debugging.
+    </li>
+
+    <li>
+      <strong>Node.js:</strong> provides an environment for running JavaScript outside a browser.
+    </li>
+  </ul>
+
+  <p>
+    I'm still early in TM352, but I'm enjoying approaching familiar
+    material at a slower pace. Hopefully this will give me a stronger
+    foundation as the module moves from basic JavaScript towards more
+    complex web applications.
+  </p>
+
+
+  <a
+    class="button"
+    href="../index.html#learning"
+  >
+    ← Back to Learning & Development
+  </a>
+
+</article>
+```
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ralph Caton. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

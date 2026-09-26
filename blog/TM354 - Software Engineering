@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="What I'm learning about software quality, maintainability and Extreme Programming while studying TM354 Software Engineering."
+  />
+
+  <title>What Makes Good Software? Lessons from TM354 | Ralph Caton</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+
+<body>
+
+  <header>
+
+    <nav class="navbar">
+
+      <div class="logo">
+        Ralph Caton
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#learning">Learning</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <article class="blog-post container">
+
+      <p class="eyebrow">
+        TM354 · Software Engineering · September 2026
+      </p>
+
+      <h1>
+        What Makes Good Software? Lessons from TM354
+      </h1>
+
+      <p class="blog-introduction">
+        I've also started TM354, Software Engineering. One of the first
+        things I've been thinking about is that writing software isn't
+        simply about making something that works. The way software is
+        designed and maintained matters too.
+      </p>
+
+
+      <h2>Software has to meet people's needs</h2>
+
+      <p>
+        A software system is built to meet requirements, but those
+        requirements are ultimately connected to the people who use the
+        system.
+      </p>
+
+      <p>
+        A successful system therefore needs to do more than simply run
+        without producing errors. It needs to fulfil the needs of its
+        users, meet their expectations and be delivered within reasonable
+        time and cost constraints.
+      </p>
+
+      <p>
+        It also needs to be able to cope with change. User requirements,
+        technology and the environment in which software operates can all
+        change over time.
+      </p>
+
+
+      <h2>What does software quality mean?</h2>
+
+      <p>
+        One thing I found interesting was the idea that software quality
+        includes several different characteristics.
+      </p>
+
+      <ul>
+        <li><strong>Usefulness:</strong> does the software actually help its users?</li>
+        <li><strong>Usability:</strong> can users understand and use it effectively?</li>
+        <li><strong>Reliability:</strong> does it behave consistently?</li>
+        <li><strong>Availability:</strong> is the system available when users need it?</li>
+        <li><strong>Maintainability:</strong> can the software be changed without excessive difficulty or cost?</li>
+      </ul>
+
+      <p>
+        The last of these has particularly stood out to me because it is
+        easy to think about software as something that is finished once it
+        works.
+      </p>
+
+
+      <h2>Why maintainability matters</h2>
+
+      <p>
+        Software rarely stays exactly the same throughout its lifetime.
+        Bugs need to be fixed, requirements change and new functionality
+        may need to be added.
+      </p>
+
+      <p>
+        If the code is difficult to understand or changes in one part of
+        the program regularly cause problems somewhere else, maintaining
+        the system can become expensive.
+      </p>
+
+      <p>
+        This has made me think differently about some of my own programming
+        projects. Getting a program to work is one thing. Writing it in a
+        way that makes future changes easier is another.
+      </p>
+
+
+      <h2>Extreme Programming and its values</h2>
+
+      <p>
+        Another part of my study has introduced me to Extreme Programming
+        (XP). XP uses five values to guide software development:
+      </p>
+
+      <ul>
+        <li><strong>Communication</strong></li>
+        <li><strong>Simplicity</strong></li>
+        <li><strong>Feedback</strong></li>
+        <li><strong>Courage</strong></li>
+        <li><strong>Respect</strong></li>
+      </ul>
+
+      <p>
+        I'm particularly interested in the relationship between
+        communication, simplicity and feedback.
+      </p>
+
+
+      <h2>Communication</h2>
+
+      <p>
+        Software development is a team activity, so knowledge needs to move
+        between people. A technical solution isn't particularly useful if
+        the people who need that information don't know about it.
+      </p>
+
+      <p>
+        This also made me think about problems differently. If something
+        goes wrong, it can be useful to ask not only "How do we fix this?"
+        but also "Was there a communication problem that contributed to it?"
+      </p>
+
+
+      <h2>Simplicity</h2>
+
+      <p>
+        One idea from XP that I found particularly memorable was the question:
+      </p>
+
+      <blockquote>
+        <p>
+          What is the simplest thing that could possibly work?
+        </p>
+      </blockquote>
+
+      <p>
+        This doesn't mean that software development is always easy or that
+        every system should be extremely simple. Instead, it encourages us
+        to avoid adding unnecessary complexity when we don't need it.
+      </p>
+
+      <p>
+        This seems especially relevant to small personal projects. It can
+        be tempting to add another feature simply because it would be
+        interesting to build, even when it isn't necessary for the current
+        problem.
+      </p>
+
+
+      <h2>Feedback and change</h2>
+
+      <p>
+        The other idea that stood out to me was feedback. It is very
+        difficult to know in advance exactly what the best solution will be,
+        particularly when working on a new or unfamiliar problem.
+      </p>
+
+      <p>
+        Feedback can come from many places: other people's opinions,
+        testing, the code itself and what happens after software has been
+        deployed.
+      </p>
+
+      <p>
+        This means that development doesn't necessarily have to be about
+        finding a perfect solution immediately. Small improvements followed
+        by feedback can help us discover what actually works.
+      </p>
+
+
+      <h2>What I'm taking away from this</h2>
+
+      <p>
+        TM354 is changing the way I think about programming. I'm beginning
+        to see software development as more than writing code that produces
+        the correct output.
+      </p>
+
+      <p>
+        Good software also needs to be understandable, maintainable,
+        usable and capable of changing when its requirements change.
+      </p>
+
+      <p>
+        That's something I want to keep in mind as I continue working on my
+        own projects, including KanjiFall.
+      </p>
+
+
+      <a
+        class="button"
+        href="../index.html#learning"
+      >
+        ← Back to Learning & Development
+      </a>
+
+    </article>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2026 Ralph Caton. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
