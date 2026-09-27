@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta
+ name="viewport"
+ content="width=device-width, initial-scale=1.0"
+/>
+
+<meta
+ name="description"
+ content="Building and troubleshooting a simple satellite network in Cisco Packet Tracer using routers, static routes and IPv4 addressing."
+/>
+
+  <title>Building a Satellite Network in Packet Tracer | Ralph Caton</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+  <header>
+
+```
+<nav class="navbar">
+
+  <div class="logo">
+    Ralph Caton
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="../index.html#skills">Skills</a></li>
+    <li><a href="../index.html#learning">Learning</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+
+</nav>
+```
+
+  </header>
+
+  <main>
+
+```
+<article class="blog-post container">
+
+  <p class="eyebrow">
+    Networking · Cisco Packet Tracer · September 2026
+  </p>
+
+  <h1>
+    Building a Satellite Network in Packet Tracer
+  </h1>
+
+  <p class="blog-introduction">
+    As part of my networking study, I built a small network in
+    Cisco Packet Tracer designed to represent communication
+    between two Earth-based networks through a satellite.
+    The exercise gave me an opportunity to practise IPv4
+    addressing, router interfaces, static routes and network
+    troubleshooting.
+  </p>
+
+
+  <h2>Building the network</h2>
+
+  <p>
+    The network consists of two separate Earth networks with a
+    router representing a satellite between them. Each Earth
+    network has a PC and a router, while the satellite has
+    connections to both sides.
+  </p>
+
+<h2>The Network Topology</h2>
+
+<p>
+  The network consists of two separate Earth networks with a
+  router representing a satellite between them. Each Earth
+  network has a PC and a router, while the satellite has
+  connections to both sides.
+</p>
+
+<figure>
+  <img
+    src="../images/packet-tracer-satellite.png"
+    alt="Cisco Packet Tracer network showing two PCs communicating through three routers, including a central satellite router."
+  >
+  <figcaption>
+    The completed Packet Tracer topology.
+  </figcaption>
+</figure>
+
+<p>
+  The two Earth networks use separate private IPv4 networks:
+  <code>192.168.1.0/24</code> and
+  <code>192.168.2.0/24</code>.
+</p>
+
+  <p>
+    The two Earth networks use separate private IPv4 networks:
+    <code>192.168.1.0/24</code> and
+    <code>192.168.2.0/24</code>.
+  </p>
+
+  <p>
+    The links between the routers use two smaller
+    <code>/30</code> networks. These provide two usable addresses
+    for each point-to-point connection.
+  </p>
+
+
+  <h2>Configuring the PCs</h2>
+
+  <p>
+    I configured PC0 with the following IPv4 settings:
+  </p>
+
+  <pre><code>IPv4 Address:   192.168.1.10
+```
+
+Subnet Mask:    255.255.255.0
+Default Gateway: 192.168.1.1</code></pre>
+
+```
+  <p>
+    PC1 uses the corresponding configuration on the second
+    network:
+  </p>
+
+  <pre><code>IPv4 Address:   192.168.2.10
+```
+
+Subnet Mask:    255.255.255.0
+Default Gateway: 192.168.2.1</code></pre>
+
+```
+  <p>
+    The default gateway is important because it tells the PC
+    where to send traffic destined for another network. For
+    example, PC0 cannot directly reach
+    <code>192.168.2.10</code>, because that address belongs to a
+    different subnet. It therefore sends the traffic to
+    Router0 at <code>192.168.1.1</code>.
+  </p>
+
+
+  <h2>Configuring the router links</h2>
+
+  <p>
+    The router-to-router connections use separate
+    <code>/30</code> networks.
+  </p>
+
+  <p>
+    The first connection is:
+  </p>
+
+  <pre><code>Router0:    10.0.0.1
+```
+
+Satellite:  10.0.0.2
+Network:    10.0.0.0/30</code></pre>
+
+```
+  <p>
+    The second connection is:
+  </p>
+
+  <pre><code>Satellite:  10.0.0.5
+```
+
+Router2:    10.0.0.6
+Network:    10.0.0.4/30</code></pre>
+
+```
+  <p>
+    After configuring the interfaces, I used
+    <code>show ip interface brief</code> to check their status.
+    The important result was that the interfaces were
+    <code>up/up</code>.
+  </p>
+
+  <p>
+    I also used <code>ping</code> to test the individual
+    connections before trying to communicate between the PCs.
+    For example, Router2 was able to successfully ping
+    <code>10.0.0.5</code>.
+  </p>
+
+
+  <h2>Adding static routes</h2>
+
+  <p>
+    The routers know about their directly connected networks,
+    but that isn't enough to reach the network on the other side
+    of the satellite. I therefore added static routes.
+  </p>
+
+  <p>
+    On Router0, I added:
+  </p>
+
+  <pre><code>ip route 192.168.2.0 255.255.255.0 10.0.0.2</code></pre>
+
+  <p>
+    This tells Router0 that traffic for the
+    <code>192.168.2.0/24</code> network should be sent to the
+    satellite at <code>10.0.0.2</code>.
+  </p>
+
+  <p>
+    On the satellite, I added routes for both Earth networks:
+  </p>
+
+  <pre><code>ip route 192.168.1.0 255.255.255.0 10.0.0.1
+```
+
+ip route 192.168.2.0 255.255.255.0 10.0.0.6</code></pre>
+
+```
+  <p>
+    Finally, Router2 was configured with:
+  </p>
+
+  <pre><code>ip route 192.168.1.0 255.255.255.0 10.0.0.5</code></pre>
+
+  <p>
+    I then used <code>show ip route</code> to check that the
+    static routes had been installed correctly.
+  </p>
+
+
+  <h2>Understanding the route</h2>
+
+  <p>
+    Once the routing was configured, a packet travelling from
+    PC0 to PC1 could follow this path:
+  </p>
+
+  <pre><code>PC0
+```
+
+192.168.1.10
+↓
+Router0
+192.168.1.1
+↓
+10.0.0.1
+↓
+Satellite
+10.0.0.2
+↓
+10.0.0.5
+↓
+Router2
+10.0.0.6
+↓
+192.168.2.1
+↓
+PC1
+192.168.2.10</code></pre>
+
+```
+  <p>
+    This is a useful way of thinking about routing. The PCs do
+    not need to know the entire path between them. They send
+    traffic to their default gateway, and the routers use their
+    routing tables to determine where the packet should go next.
+  </p>
+
+
+  <h2>Troubleshooting the connection</h2>
+
+  <p>
+    The first attempt to ping PC1 from PC0 failed with 100%
+    packet loss.
+  </p>
+
+  <pre><code>Pinging 192.168.2.10 with 32 bytes of data:
+```
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Packets: Sent = 4, Received = 0, Lost = 4 (100% loss)</code></pre>
+
+```
+  <p>
+    Rather than immediately changing the router configuration,
+    I started testing the network one hop at a time.
+  </p>
+
+  <p>
+    PC0 could successfully ping its own router:
+  </p>
+
+  <pre><code>ping 192.168.1.1</code></pre>
+
+  <p>
+    It could also reach Router0's satellite-facing interface:
+  </p>
+
+  <pre><code>ping 10.0.0.1</code></pre>
+
+  <p>
+    And it could reach the satellite:
+  </p>
+
+  <pre><code>ping 10.0.0.2</code></pre>
+
+  <p>
+    I then tested Router2's LAN interface:
+  </p>
+
+  <pre><code>ping 192.168.2.1</code></pre>
+
+  <p>
+    This also worked. That was an important clue because it
+    showed that the routing between the two routers was actually
+    working.
+  </p>
+
+
+  <h2>Finding the actual problem</h2>
+
+  <p>
+    The problem turned out not to be the routers at all.
+    PC1 had never actually been configured with its IPv4
+    address.
+  </p>
+
+  <p>
+    Its configuration showed:
+  </p>
+
+  <pre><code>IPv4 Address:   0.0.0.0
+```
+
+Subnet Mask:    0.0.0.0
+Default Gateway: 0.0.0.0</code></pre>
+
+```
+  <p>
+    Once I configured PC1 with the correct settings:
+  </p>
+
+  <pre><code>IPv4 Address:   192.168.2.10
+```
+
+Subnet Mask:    255.255.255.0
+Default Gateway: 192.168.2.1</code></pre>
+
+```
+  <p>
+    the connection worked.
+  </p>
+
+  <p>
+    This was probably the most useful part of the exercise for
+    me. The routing configuration looked complicated enough that
+    it would have been easy to assume the problem was somewhere
+    in the routers. Testing each section separately showed that
+    the routers were already doing their jobs correctly.
+  </p>
+
+
+  <h2>Testing the complete network</h2>
+
+  <p>
+    After configuring PC1, I tested the connection in both
+    directions.
+  </p>
+
+  <p>
+    PC1 was able to ping PC0:
+  </p>
+
+  <pre><code>Pinging 192.168.1.10 with 32 bytes of data:
+```
+
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=125
+Reply from 192.168.1.10: bytes=32 time=10ms TTL=125
+Reply from 192.168.1.10: bytes=32 time=11ms TTL=125
+Reply from 192.168.1.10: bytes=32 time=12ms TTL=125
+
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)</code></pre>
+
+```
+  <p>
+    This confirmed that the two separate IP networks could
+    communicate successfully through the intermediate routers.
+  </p>
+
+
+  <h2>What the satellite represents</h2>
+
+  <p>
+    Although I called the middle router a satellite, Packet
+    Tracer is not simulating an actual radio signal travelling
+    through space. The device is functioning as a simplified
+    representation of the networking role that a satellite could
+    play.
+  </p>
+
+  <p>
+    In a real satellite communication system, there would be
+    additional physical processes such as an uplink from an
+    Earth station, transmission through the satellite and a
+    downlink to another Earth station.
+  </p>
+
+  <p>
+    This simulation abstracts those physical details away and
+    focuses on the networking concepts. The important idea is
+    that the intermediate device can receive traffic from one
+    network and forward it towards another network.
+  </p>
+
+
+  <h2>Understanding TTL</h2>
+
+  <p>
+    One small detail I noticed while testing was the TTL value
+    in the ping responses.
+  </p>
+
+  <p>
+    When PC1 pinged itself, the response had a TTL of 128:
+  </p>
+
+  <pre><code>Reply from 192.168.2.10: bytes=32 time=8ms TTL=128</code></pre>
+
+  <p>
+    When PC1 pinged PC0, the returned packets had a TTL of 125:
+  </p>
+
+  <pre><code>Reply from 192.168.1.10: bytes=32 time&lt;1ms TTL=125</code></pre>
+
+  <p>
+    TTL, or Time To Live, is reduced as an IP packet passes
+    through routers. The difference provided a useful reminder
+    that the packet was travelling through multiple Layer 3
+    hops rather than communicating directly between the two PCs.
+  </p>
+
+
+  <h2>What I learned from the exercise</h2>
+
+  <p>
+    The biggest lesson was that configuring a network is only
+    part of the job. Being able to troubleshoot it systematically
+    is just as important.
+  </p>
+
+  <p>
+    When the first end-to-end ping failed, I initially had to
+    consider several possible causes: incorrect IP addressing,
+    an incorrect gateway, a router interface being down, a
+    missing route or a problem with the end device.
+  </p>
+
+  <p>
+    Testing each hop separately allowed me to narrow the problem
+    down instead of changing configurations without knowing what
+    was wrong.
+  </p>
+
+
+  <h2>What I'm taking away from this</h2>
+
+  <ul>
+
+    <li>
+      <strong>IPv4 addressing:</strong>
+      devices need an address, subnet mask and appropriate
+      default gateway to communicate across networks.
+    </li>
+
+    <li>
+      <strong>Default gateways:</strong>
+      PCs send traffic for other networks to their local router.
+    </li>
+
+    <li>
+      <strong>Static routes:</strong>
+      routers can be explicitly told which next hop to use for
+      a particular network.
+    </li>
+
+    <li>
+      <strong>Routing tables:</strong>
+      <code>show ip route</code> can be used to check how a
+      router knows where to send traffic.
+    </li>
+
+    <li>
+      <strong>Ping:</strong>
+      testing individual interfaces makes it possible to
+      identify where connectivity is failing.
+    </li>
+
+    <li>
+      <strong>Troubleshooting:</strong>
+      testing one hop at a time is much more useful than
+      immediately changing configuration.
+    </li>
+
+    <li>
+      <strong>Packet Tracer:</strong>
+      it provides a useful way to experiment with networking
+      concepts without needing physical networking equipment.
+    </li>
+
+  </ul>
+
+
+  <p>
+    This was a relatively small network, but it gave me a much
+    better understanding of what routers are actually doing with
+    IP traffic. I'm finding that working through these examples
+    myself and troubleshooting the mistakes is helping the
+    concepts stick much more effectively than simply reading
+    about them.
+  </p>
+
+
+
+  <a
+    class="button"
+    href="../index.html#learning"
+  >
+    ← Back to Learning & Development
+  </a>
+
+</article>
+```
+
+  </main>
+
+  <footer>
+
+```
+<p>
+  &copy; 2026 Ralph Caton. All rights reserved.
+</p>
+```
+
+  </footer>
+
+</body>
+
+</html>

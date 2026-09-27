@@ -359,7 +359,7 @@ h3 {
 .blog-date {
   color: #3d7043;
 
-  font-size: 0.85rem;
+  font-size: 1rem;
 
   font-weight: bold;
 
@@ -564,6 +564,14 @@ footer {
     padding: 2rem 1.5rem;
   }
 
+  .blog-post figure {
+  margin: 2rem 0;
+}
+
+.blog-post img {
+  width: 100%;
+}
+
 }
 
 /* =========================
@@ -572,6 +580,12 @@ footer {
 
 .blog-post {
   max-width: 800px;
+}
+
+.blog-post p,
+.blog-post li {
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .blog-post h1 {
@@ -583,45 +597,52 @@ footer {
 }
 
 .blog-introduction {
-  font-size: 1.2rem;
-
+  font-size: 1.25rem;
+  line-height: 1.7;
   color: #555;
-
   margin-bottom: 3rem;
 }
 
 .blog-post code {
   background-color: #eef2ee;
-
   padding: 0.15rem 0.35rem;
-
   border-radius: 4px;
-
   font-family: Consolas, monospace;
 }
 
 .blog-post pre {
   background-color: #1e3b1e;
-
   color: #fff;
-
   padding: 1.5rem;
-
   border-radius: 8px;
-
   overflow-x: auto;
-
   margin: 1.5rem 0;
 }
 
 .blog-post pre code {
   background: none;
-
   padding: 0;
-
   color: inherit;
 }
 
 .blog-post li {
   margin-bottom: 0.5rem;
+}
+
+.blog-post figure {
+  margin: 2rem -3rem;
+}
+
+.blog-post img {
+  display: block;
+  width: calc(100% + 6rem);
+  height: auto;
+  border-radius: 8px;
+}
+
+.blog-post figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.75rem;
 }
