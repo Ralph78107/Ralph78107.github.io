@@ -513,67 +513,6 @@ footer {
   color: #1e3b1e;
 }
 
-
-/* =========================
-   Mobile
-========================= */
-
-@media (max-width: 700px) {
-
-  .navbar {
-    flex-direction: column;
-
-    gap: 0.75rem;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-
-    justify-content: center;
-  }
-
-  .container {
-    padding: 3.5rem 1.25rem;
-  }
-
-  .hero {
-    min-height: auto;
-
-    padding-top: 4rem;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  .intro {
-    font-size: 1.15rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .modal {
-    padding: 1rem;
-  }
-
-  .modal-content {
-    margin: 15% auto;
-
-    padding: 2rem 1.5rem;
-  }
-
-  .blog-post figure {
-  margin: 2rem 0;
-}
-
-.blog-post img {
-  width: 100%;
-}
-
-}
-
 /* =========================
    Blog Articles
 ========================= */
@@ -645,4 +584,57 @@ footer {
   color: #666;
   text-align: center;
   margin-top: 0.75rem;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 4rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .intro {
+    font-size: 1.15rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    margin: 15% auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .blog-post figure {
+    margin: 2rem 0;
+  }
+
+  .blog-post img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
