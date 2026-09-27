@@ -633,8 +633,9 @@ footer {
   }
 
   .blog-post img {
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 90%;
     height: auto;
+    margin: 0 auto;
   }
 }
